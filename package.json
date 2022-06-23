@@ -2,7 +2,7 @@
   "name": "teckiteasy",
   "version": "1.0.0",
   "description": "## Inleiding",
-  "main": "main.js",
+  "main": "data/tv_data.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
