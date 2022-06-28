@@ -16,15 +16,34 @@ export const totalSalesCalc = () => {
     let totalSales = null;
 
     for (let i = 0; i < inventory.length; i++) {
-        totalSales += inventory;
+        totalSales += inventory[i].sold;
     }
-    return totalSales + " hoezo not a number!";
+    return totalSales;
 }
 
-
-
 // * **Opdracht 2b:** Zorg ervoor dat dit aantal _in het groen_ wordt weergegeven op de pagina.
+// See main//
+
+
 // * **Opdracht 2c:** Hoeveel tv's heeft Tech It Easy ingekocht? Schrijf een script dat dit berekent. Log de uitkomst in de
 // console.
+
+export const totalTvbought = () => {
+
+    let totalBought = null;
+
+    for (let i= 0; i < inventory.length; i ++) {
+        totalBought += inventory[i].originalStock;
+    }return totalBought;
+
+
+};
+
+
+
 // * **Opdracht 2d:** Zorg ervoor dat dit aantal _in het blauw_ wordt weergegeven op de pagina.
 // * **Opdracht 2e:** Geef _in het rood_ weer hoeveel tv's er nog verkocht moeten worden.
+
+
+
+

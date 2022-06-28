@@ -21,17 +21,23 @@ export const arrayOfTvNames = inventory.map((item) => {
 
 //1b//
 
-export const arrayOfSoldOutTv = inventory.map((item) => {
+export const arrayOfSoldOutTv = inventory.filter((item) => {
     if (item.sold === item.originalStock){
-        return item;
+        return true;
     }
 });
 
+// export const arrayOfSoldOutTv = inventory.map((item) => {
+//     if (item.sold === item.originalStock){
+//         return item;
+//     }
+// });
+
 //1c//
 
-export const arrayOfAmbiTv = inventory.map((item) => {
+export const arrayOfAmbiTv = inventory.filter((item) => {
     if (item.options.ambiLight === true){
-        return item;
+        return true;
     }
 });
 
