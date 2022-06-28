@@ -1,7 +1,7 @@
 //import data//
 import inventory from "/data/inventory.js";
 import {arrayOfAmbiTv, arrayOfSoldOutTv, arrayOfTvNames, arrayOfTvPrices} from "./functions/opdracht1.js";
-import {totalSalesCalc, totalTvbought} from "./functions/opdracht2.js";
+import {totalSalesCalc, totalTvbought, toBeSoldTvsCalc} from "./functions/opdracht2.js";
 
 
 
@@ -24,7 +24,14 @@ soldTvinput.innerText = `totaal verkochte tv's ${totalSalesCalc(inventory)}`
 soldTvinput.style.color = "green";
 //2c//
 console.log(totalTvbought(inventory));
-//2//
+//2d//
 export const totalTvStockInput = document.getElementById("totalTvsBought");
 totalTvStockInput.innerText = `total ingekochte tv's ${totalTvbought(inventory)}`
 totalTvStockInput.style.color = "blue";
+//2e//
+// export const toBeSoldTvs = totalTvbought(inventory) - totalSalesCalc(inventory);
+// return toBeSoldTvs;
+
+export const toBeSoldTvsInput = document.getElementById(" ToBeSoldtv's");
+toBeSoldTvsInput.innerText = `totaal nog te verkopen tv's ${toBeSoldTvsCalc(inventory)}`
+toBeSoldTvsInput.style.color = "red";

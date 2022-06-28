@@ -39,11 +39,12 @@ export const totalTvbought = () => {
 
 };
 
-
-
 // * **Opdracht 2d:** Zorg ervoor dat dit aantal _in het blauw_ wordt weergegeven op de pagina.
+//See main//
+
 // * **Opdracht 2e:** Geef _in het rood_ weer hoeveel tv's er nog verkocht moeten worden.
 
+export const toBeSoldTvsCalc = () => totalTvbought(inventory) - totalSalesCalc(inventory);
 
 
 
