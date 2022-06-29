@@ -7,13 +7,42 @@ import inventory from "/data/inventory.js";
 // pagina weer te geven. Zorg ervoor dat dit ook zou werken als we 200 tv's in onze array zouden hebben staan. Dat er
 // dubbele namen in zitten, is niet erg.
 
-export const createTableOfTvNames = (items) => {
+export const createListOfTvNames = (tvs) => {
 
-    const tableOfTvNames = document.getElementById('');
+    const listeOfTvNames = document.getElementById('tv-object-list');
 
-    return inventory.name.map((item) => {
+    return inventory.map((tv) => {
 
-        tableOfTvNames.innerHTML
+        listeOfTvNames.innerHTML += `
+
+        <ul>
+
+            <li>${tv.type}</li>
+            <li>${tv.name}</li>
+            <li> Brand </li>
+            <li> Price </li>
+            <li>Available sizes</li>
+                <ul>
+                    <li>${tv.availableSizes}</li>
+                </ul>
+            <li>refreshRate</li>
+            <li>screenType</li>
+            <li>screenQuality</li>
+            <li>smartTv</li>
+            <li>options</li>
+                <ul>
+                    <li>Wifi: ${tv.options.wifi}</li>
+                    <li>speech</li>
+                    <li>HDR</li>
+                    <li>Bluetooth</li>
+                    <li>Ambilight</li>
+                </ul>
+            <li>Original Stock</li>
+            <li>Sold</li>
+
+        </ul>
+        <br>
+        `
 
     });
 
