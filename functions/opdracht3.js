@@ -32,7 +32,7 @@ export const createListOfTvNames = (tvs) => {
             <li>options</li>
                 <ul>
                     <li>Wifi: ${tv.options.wifi}</li>
-                    <li>speech</li>
+                    <li>speech: ${tv.options.speech}</li>
                     <li>HDR</li>
                     <li>Bluetooth</li>
                     <li>Ambilight</li>
