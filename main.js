@@ -2,6 +2,7 @@
 import inventory from "/data/inventory.js";
 import {arrayOfAmbiTv, arrayOfSoldOutTv, arrayOfTvNames, arrayOfTvPrices} from "./functions/opdracht1.js";
 import {totalSalesCalc, totalTvbought, toBeSoldTvsCalc} from "./functions/opdracht2.js";
+import {createTableOfTvNames} from "./functions/opdracht3";
 
 
 
@@ -35,3 +36,6 @@ totalTvStockInput.style.color = "blue";
 export const toBeSoldTvsInput = document.getElementById(" ToBeSoldtv's");
 toBeSoldTvsInput.innerText = `totaal nog te verkopen tv's ${toBeSoldTvsCalc(inventory)}`
 toBeSoldTvsInput.style.color = "red";
+
+//3a//
+createTableOfTvNames(inventory);
