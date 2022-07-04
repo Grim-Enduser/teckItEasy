@@ -14,7 +14,7 @@ export const createListOfTvNames = (tvs) => {
     return inventory.map((tv) => {
 
         listeOfTvNames.innerHTML += `
-
+        <br>
         <ul>
 
             <li>${tv.type}</li>
@@ -41,7 +41,6 @@ export const createListOfTvNames = (tvs) => {
             <li>Sold</li>
 
         </ul>
-        <br>
         `
 
     });
@@ -49,6 +48,28 @@ export const createListOfTvNames = (tvs) => {
 
 };
 
+export const testAdAllSizes = () => {
+
+    let allSizesCombined = 0;
+
+    for (let i = 0; i < inventory.length; i++ ){
+
+        allSizesCombined += inventory[i].availableSizes;
+
+    }return allSizesCombined;
+
+};
+
+// export const testAdAllSizes = () => {
+//
+//     let combinedSizes = 0;
+//
+//     inventory.availableSizes.map((availableSize) => {
+//         combinedSizes += availableSize
+//     })
+//     return console.log(combinedSizes)
+//
+// };
 
 
 // * **Opdracht 3b:** Schrijf de code uit 3a om naar een functie die een array met tv-objecten verwacht. Het is handig om
