@@ -3,7 +3,7 @@ import inventory from "/data/inventory.js";
 import {arrayOfAmbiTv, arrayOfSoldOutTv, arrayOfTvNames, arrayOfTvPrices} from "./functions/opdracht1.js";
 import {totalSalesCalc, totalTvbought, toBeSoldTvsCalc} from "./functions/opdracht2.js";
 import {createListOfTvNames, testAdAllSizes} from "./functions/opdracht3.js";
-import {createTvName, tvPrice} from "./functions/opdracht4.js";
+import {createAvailableScreenSizes, createTvName, tvPrice} from "./functions/opdracht4.js";
 
 
 // opdrachten //
@@ -50,3 +50,6 @@ console.log ( createTvName ( inventory[7] ) );
 
 //4b//
 console.log ( tvPrice ( inventory[2] ) );
+
+//4c//
+console.log (createAvailableScreenSizes( inventory [4]))

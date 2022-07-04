@@ -11,6 +11,7 @@ export const createListOfTvNames = (tvs) => {
 
     const listeOfTvNames = document.getElementById('tv-object-list');
 
+    //omschrijven zodat er een spatie komt bij het wrapen als flex box row is. net als opdr4c//
     return inventory.map((tv) => {
 
         listeOfTvNames.innerHTML += `
