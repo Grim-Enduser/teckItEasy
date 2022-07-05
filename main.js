@@ -77,7 +77,7 @@ console.log(createOptionsList( inventory [3] ) );
 createInjectionListOfTvNames(inventory);
 console.log(createOptionsMap);
 
-const bonusOpdrachtButton = document.getElementById('bonus-opdracht-button');
+export const bonusOpdrachtButton = document.getElementById('bonus-opdracht-button');
 bonusOpdrachtButton.addEventListener('click', () => {
     emptyfieldbeforeclick ()
     injectedArrayOfAmbiTv ()

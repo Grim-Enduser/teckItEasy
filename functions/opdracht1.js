@@ -50,8 +50,8 @@ export const emptyfieldbeforeclick = () => {
 export const injectedArrayOfAmbiTv = () => {
 
         const listOfInjectedAmbi = document.getElementById('bonusveld');
-
-        inventory.filter((item) => {
+        //dit was eerder filter omdat ik geen hele array wilden console.loggen//
+        inventory.map((item) => {
 
         if (item.options.ambiLight === true){
 
