@@ -1,6 +1,7 @@
 //import data//
 import inventory from "/data/inventory.js";
 
+
 // #### Opdracht 4 -Functies
 //
 // Maak deze gehele opdracht eerst alsof je het voor één tv doet. We gaan één tv weergeven in het volgende format:
@@ -17,16 +18,17 @@ import inventory from "/data/inventory.js";
 
 
 
-export const createTvName = ( item ) => {
+export const createTvName = ( tv ) => {
 
-    return `Brand: ${item.brand} Type: ${item.type} Name: ${item.name}`
-}
+    return `Brand: ${tv.brand} Type: ${tv.type} Name: ${tv.name}`
+
+};
 
 
 // * **Opdracht 4b:** Maak een herbruikbare functie die de prijs van één tv als parameter verwacht (zoals `379` of `159`) teruggeeft in het format `€379,-` of `€159,-`.
 
 export const tvPrice = ( tv ) => {
-    return `€${tv.price},-`;
+    return `€ ${tv.price},-`;
 }
 
 
@@ -35,7 +37,7 @@ export const tvPrice = ( tv ) => {
 // schermgroottes heeft (`[43, 50, 55, 58]`) wordt de output `43 inch (109 cm) | 50 inch (127 cm) | 58 inch (147 cm)`. _Let op:_ om één string te genereren uit een array van schermgroottes zul je een for-loop voor moeten gebruiken.
 
 export const createAvailableScreenSizes = ( tv ) => {
-    //variable waar de map method zijn output += naartoe schrijft. deze wordt dus gevuld //
+
     let output ='';
 
     tv.availableSizes.map((sizes, i) => {
@@ -44,14 +46,14 @@ export const createAvailableScreenSizes = ( tv ) => {
 
         output += `${sizes} Inches (${sizeInCm} cm) `
 
-        //onderstaande zorgt ervoor dat achter de laatste entry van de loop geen | komt te staan//
+
         if (i < tv.availableSizes.length -1) {
             output = `${output} | `
         }
 
     })
 
-    return output
+    return output;
 
 }
 
@@ -59,6 +61,22 @@ export const createAvailableScreenSizes = ( tv ) => {
 
 //
 // * **Opdracht 4d:** Schrijf een script die de informatie van de Philips 43PUS6504/12 tv weergeeft op de pagina zoals onderstaand voorbeeld. Gebruik de functies die je hebt gemaakt in opdracht 4a, 4b en 4c.
+
+const infoPerTvInjectie = document.getElementById('tv-informatie-per-tv')
+
+export const createInfoPerTv = (tv) => {
+
+    infoPerTvInjectie.innerHTML = `
+    <p><stong>${createTvName(tv)}</stong></p>
+    <p><em> ${tvPrice(tv)}</em></p>
+    <p>${createAvailableScreenSizes(tv)}</p>
+    `
+
+};
+
+
+
+
 //
 //     ```
 //   Philips 43PUS6504/12 - 4K TV

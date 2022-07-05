@@ -14,3 +14,10 @@ body {
 #footnoteEmTest {
     font-style: italic;
 }
+
+#tv-informatie-per-tv {
+    display: inline-block;
+    background-color: lightcoral;
+    padding: 10px 30px;
+    border-radius: 5px;
+}

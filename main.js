@@ -2,8 +2,8 @@
 import inventory from "/data/inventory.js";
 import {arrayOfAmbiTv, arrayOfSoldOutTv, arrayOfTvNames, arrayOfTvPrices} from "./functions/opdracht1.js";
 import {totalSalesCalc, totalTvbought, toBeSoldTvsCalc} from "./functions/opdracht2.js";
-import {createListOfTvNames, testAdAllSizes} from "./functions/opdracht3.js";
-import {createAvailableScreenSizes, createTvName, tvPrice} from "./functions/opdracht4.js";
+import {createListOfTvNames} from "./functions/opdracht3.js";
+import {createAvailableScreenSizes, createTvName, tvPrice, createInfoPerTv} from "./functions/opdracht4.js";
 
 
 // opdrachten //
@@ -40,16 +40,20 @@ toBeSoldTvsInput.style.color = "red";
 //3a//
 createListOfTvNames(inventory);
 
-//test optellen//
-console.log(testAdAllSizes(inventory));
+// test optellen//
+// console.log(loopOpTelTest( inventory ) );
 
 //4a//
 // console.log(singelTvName);
 
-console.log ( createTvName ( inventory[7] ) );
+console.log ( createTvName ( inventory[2] ) );
 
 //4b//
-console.log ( tvPrice ( inventory[2] ) );
+console.log ( tvPrice ( inventory[5] ) );
 
 //4c//
-console.log (createAvailableScreenSizes( inventory [4]))
+console.log (createAvailableScreenSizes( inventory [4] ) );
+
+//4d//
+
+createInfoPerTv(inventory[5]);

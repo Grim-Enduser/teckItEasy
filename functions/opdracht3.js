@@ -11,7 +11,7 @@ export const createListOfTvNames = (tvs) => {
 
     const listeOfTvNames = document.getElementById('tv-object-list');
 
-    //omschrijven zodat er een spatie komt bij het wrapen als flex box row is. net als opdr4c//
+
     return inventory.map((tv) => {
 
         listeOfTvNames.innerHTML += `
@@ -49,29 +49,21 @@ export const createListOfTvNames = (tvs) => {
 
 };
 
-export const testAdAllSizes = () => {
-
-    let allSizesCombined = 0;
-
-    for (let i = 0; i < inventory.length; i++ ){
-
-        allSizesCombined += inventory[i].availableSizes;
-
-    }return allSizesCombined;
-
-};
-
-// export const testAdAllSizes = () => {
+// export const loopOpTelTest = () => {
 //
-//     let combinedSizes = 0;
+//     opGeteldeArray =[];
 //
-//     inventory.availableSizes.map((availableSize) => {
-//         combinedSizes += availableSize
-//     })
-//     return console.log(combinedSizes)
+//     for (let i = 0 ; i < inventory.length; i++) {
 //
-// };
-
+//         if (inventory.isArray(items[i])){
+//
+//             opGeteldeArray.push(items[i]);
+//         }
+//     }
+//
+//     return opGeteldeArray;
+//
+// }
 
 // * **Opdracht 3b:** Schrijf de code uit 3a om naar een functie die een array met tv-objecten verwacht. Het is handig om
 // onze scripts als functies op te zetten, zodat we ze gemakkelijk kunnen hergebruiken. _Tip_: vergeet deze functie
