@@ -21,3 +21,19 @@ body {
     padding: 10px 30px;
     border-radius: 5px;
 }
+
+#all-Tvs-Info {
+    display: inline-block;
+    background-color: lightgoldenrodyellow;
+    padding: 10px 30px;
+    border-radius: 5px;
+
+}
+
+#bonusveld {
+    color: red;
+    display: inline-block;
+    background-color: lightgreen;
+    padding: 10px 30px;
+    border-radius: 5px;
+}

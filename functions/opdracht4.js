@@ -2,6 +2,7 @@
 import inventory from "/data/inventory.js";
 
 
+
 // #### Opdracht 4 -Functies
 //
 // Maak deze gehele opdracht eerst alsof je het voor één tv doet. We gaan één tv weergeven in het volgende format:
@@ -29,7 +30,7 @@ export const createTvName = ( tv ) => {
 
 export const tvPrice = ( tv ) => {
     return `€ ${tv.price},-`;
-}
+};
 
 
 // * **Opdracht 4c:** Maak een herbruikbare functie die een string genereert voor alle beschikbare schermgroottes van één tv. De functie geeft dit terug in het format `[schermgrootte] inches ([schermgrootte omgerekend]cm) | [schermgrootte] inches ([schermgrootte omgerekend]cm)`
@@ -86,11 +87,41 @@ export const createInfoPerTv = (tv) => {
 //
 // * **Opdracht 4e:** Maak een herbruikbare functie die de informatie van **alle** tv's weergeeft op de pagina. Gebruik hiervoor de map-methode in combinatie met de functies die je hebt gemaakt in opdracht 4a, 4b en 4c.
 //
+
+export const createInjectionListOfTvNames = () => {
+
+    const listeOfInjectedTvs = document.getElementById('all-Tvs-Info');
+
+    return inventory.map((tv) => {
+
+        listeOfInjectedTvs.innerHTML += `
+            
+        <p><stong>${createTvName(tv)}</stong></p>
+        <p><em> ${tvPrice(tv)}</em></p>
+        <p>${createAvailableScreenSizes(tv)}</p>
+        <p>${createOptionsList(tv)}</p>
+        `
+    });
+};
+
+export const createOptionsList = ( tv ) => {
+
+    return `Speech: ${tv.options.speech} Wifi: ${tv.options.wifi} ambilight: ${tv.options.ambiLight}`
+
+};
+
+export const createOptionsMap = inventory.map((item) => {
+
+    return `Speech: ${item.options.speech} Wifi: ${item.options.wifi} ambilight: ${item.options.ambiLight}`
+
+});
+
 // #### Bonusopdracht
 //
 // 1. Maak drie knoppen op de pagina: `Sorteer op prijs`, `AmbiLight TV's` en `Uitverkochte exemplaren`. Gebruik de code
 // die je in opdracht 1b, 1c en 1d hebt gemaakt en schrijf dit om naar functies zodat je ze kunt aanroepen op het moment
-// dat de buttons geklikt worden. Zorg ervoor dat de functies de uitkomsten in de de console loggen als de gebruiker op
+// dat de buttons geklikt worden. Zorg ervoor dat de functies de uitkomsten in de console loggen als de gebruiker op
 // de bijbehorende knop klikt. _Tip_: lees hiervoor paragraaf 7.4 op EdHub eens door!
 //     2. Zorg er nu voor, in plaats van dat de uitkomsten in de console worden gelogd, dat de uitkomsten worden meegegeven aan
 // jouw functie uit 4e zodat de resultaten daadwerkelijk op de pagina weergegeven worden!
+

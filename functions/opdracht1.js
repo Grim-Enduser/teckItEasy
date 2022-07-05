@@ -12,6 +12,7 @@
 
 //import data//
 import inventory from "/data/inventory.js";
+import {createAvailableScreenSizes, createTvName, tvPrice} from "./opdracht4.js";
 
 //1a//
 
@@ -34,12 +35,44 @@ export const arrayOfSoldOutTv = inventory.filter((item) => {
 // });
 
 //1c//
+//bonusvariatie//
+
+export const emptyfieldbeforeclick = () => {
+
+    const emptybeforeclick = document.getElementById('bonusveld');
+
+    emptybeforeclick.innerHTML ='';
+
+    return emptybeforeclick;
+
+};
+
+export const injectedArrayOfAmbiTv = () => {
+
+        const listOfInjectedAmbi = document.getElementById('bonusveld');
+
+        inventory.filter((item) => {
+
+        if (item.options.ambiLight === true){
+
+            listOfInjectedAmbi.innerHTML +=`
+            <p><strong>${createTvName(item)}</strong></p>
+            <p><strong>${tvPrice(item)}</strong></p>
+            <p><strong>${createAvailableScreenSizes(item)}</strong></p>
+            `
+
+        } return listOfInjectedAmbi;
+    });
+};
+
 
 export const arrayOfAmbiTv = inventory.filter((item) => {
     if (item.options.ambiLight === true){
         return true;
     }
 });
+
+
 
 //1d//
 
