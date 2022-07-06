@@ -6,7 +6,7 @@ import {
     arrayOfTvNames,
     arrayOfTvPrices,
     emptyfieldbeforeclick,
-    injectedArrayOfAmbiTv
+    injectedArrayOfAmbiTv, injectedArrayOfTVsSortedByPrice
 } from "./functions/opdracht1.js";
 import {totalSalesCalc, totalTvbought, toBeSoldTvsCalc} from "./functions/opdracht2.js";
 import {createListOfTvNames} from "./functions/opdracht3.js";
@@ -81,5 +81,12 @@ export const bonusOpdrachtButton = document.getElementById('bonus-opdracht-butto
 bonusOpdrachtButton.addEventListener('click', () => {
     emptyfieldbeforeclick ()
     injectedArrayOfAmbiTv ()
-    console.log('dit werlt dus gewoon')
+    console.log('dit werkt dus gewoon')
 });
+
+export const bonusOpdrachtButtonPrice = document.getElementById('bonus-opdracht-button-price');
+bonusOpdrachtButtonPrice.addEventListener('click', () => {
+    emptyfieldbeforeclick ()
+    injectedArrayOfTVsSortedByPrice ()
+    console.log('dit werkt dus ook gewoon')
+});    

@@ -78,5 +78,26 @@ export const arrayOfAmbiTv = inventory.filter((item) => {
 
 export const arrayOfTvPrices = inventory.sort((a, b) => a.price - b.price);
 
+//bonus variatie//
+
+export const injectedArrayOfTVsSortedByPrice = () => {
+
+    const arrayOfTVsSortedByPrice = document.getElementById('bonusveld');
+
+    const tempArrayOfPrices = inventory.sort((a, b) => a.price - b.price);
+
+    tempArrayOfPrices.map((item) => {
+
+        return arrayOfTVsSortedByPrice.innerHTML +=`
+            <p><strong>${createTvName(item)}</strong></p>
+            <p><strong>${tvPrice(item)}</strong></p>
+            <p><strong>${createAvailableScreenSizes(item)}</strong></p>
+        `
+    });
+
+
+
+
+};
 
 
