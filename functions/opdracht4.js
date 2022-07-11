@@ -1,5 +1,5 @@
 //import data//
-import inventory from "/data/inventory.js";
+import getInventory from "/data/inventory.js";
 
 
 
@@ -92,7 +92,7 @@ export const createInjectionListOfTvNames = () => {
 
     const listeOfInjectedTvs = document.getElementById('all-Tvs-Info');
 
-    return inventory.map((tv) => {
+    return getInventory().map((tv) => {
 
         listeOfInjectedTvs.innerHTML += `
             
@@ -110,11 +110,17 @@ export const createOptionsList = ( tv ) => {
 
 };
 
-export const createOptionsMap = inventory.map((item) => {
+export const createOptionsMap = getInventory().map((item) => {
 
     return `Speech: ${item.options.speech} Wifi: ${item.options.wifi} ambilight: ${item.options.ambiLight}`
 
 });
+
+console.log(
+    []
+        .concat(...getInventory().map((tv) => tv.availableSizes))
+        .reduce((sum, current) => sum + current, 0)
+)
 
 // #### Bonusopdracht
 //

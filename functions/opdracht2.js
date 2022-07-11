@@ -1,5 +1,5 @@
 //import data//
-import inventory from "/data/inventory.js";
+import getInventory from "/data/inventory.js";
 
 // #### Opdracht 2 - Elementen in de DOM plaatsen
 
@@ -12,6 +12,8 @@ import inventory from "/data/inventory.js";
 
 
 export const totalSalesCalc = () => {
+
+    const inventory = getInventory();
 
     let totalSales = null;
 
@@ -30,6 +32,8 @@ export const totalSalesCalc = () => {
 
 export const totalTvbought = () => {
 
+    const inventory = getInventory();
+
     let totalBought = null;
 
     for (let i= 0; i < inventory.length; i ++) {
@@ -44,7 +48,7 @@ export const totalTvbought = () => {
 
 // * **Opdracht 2e:** Geef _in het rood_ weer hoeveel tv's er nog verkocht moeten worden.
 
-export const toBeSoldTvsCalc = () => totalTvbought(inventory) - totalSalesCalc(inventory);
+export const toBeSoldTvsCalc = () => totalTvbought(getInventory()) - totalSalesCalc(getInventory());
 
 
 

@@ -1,5 +1,5 @@
 // VOORRAAD ARRAY MET TV'S
-const inventory = [
+ const inventory = [
   {
     type: '43PUS6504/12',
     name: '4K TV',
@@ -162,4 +162,8 @@ const inventory = [
   },
 ];
 
-export default inventory;
+
+
+export default () => [...inventory];
+
+// export const getInventory = () => [...inventory];

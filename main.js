@@ -1,12 +1,12 @@
 //import data//
-import inventory from "/data/inventory.js";
+import getInventory from "/data/inventory.js";
 import {
     arrayOfAmbiTv,
     arrayOfSoldOutTv,
     arrayOfTvNames,
     arrayOfTvPrices,
     emptyfieldbeforeclick,
-    injectedArrayOfAmbiTv, injectedArrayOfTVsSortedByPrice
+    injectedArrayOfAmbiTv, injectedArrayOfTVsSortedByPrice, injectedSelectionOfAvailableTvs
 } from "./functions/opdracht1.js";
 import {totalSalesCalc, totalTvbought, toBeSoldTvsCalc} from "./functions/opdracht2.js";
 import {createListOfTvNames} from "./functions/opdracht3.js";
@@ -33,48 +33,48 @@ console.log(arrayOfAmbiTv);
 console.log(arrayOfTvPrices);
 
 //2a//
-console.log(totalSalesCalc(inventory));
+console.log(totalSalesCalc(getInventory()));
 //2b//
 export const soldTvinput = document.getElementById("soldTvs");
-soldTvinput.innerText = `totaal verkochte tv's ${totalSalesCalc(inventory)}`
+soldTvinput.innerText = `totaal verkochte tv's ${totalSalesCalc(getInventory)}`
 soldTvinput.style.color = "green";
 //2c//
-console.log(totalTvbought(inventory));
+console.log(totalTvbought(getInventory()));
 //2d//
 export const totalTvStockInput = document.getElementById("totalTvsBought");
-totalTvStockInput.innerText = `total ingekochte tv's ${totalTvbought(inventory)}`
+totalTvStockInput.innerText = `total ingekochte tv's ${totalTvbought(getInventory)}`
 totalTvStockInput.style.color = "blue";
 //2e//
 // export const toBeSoldTvs = totalTvbought(inventory) - totalSalesCalc(inventory);
 // return toBeSoldTvs;
 
 export const toBeSoldTvsInput = document.getElementById(" ToBeSoldtv's");
-toBeSoldTvsInput.innerText = `totaal nog te verkopen tv's ${toBeSoldTvsCalc(inventory)}`
+toBeSoldTvsInput.innerText = `totaal nog te verkopen tv's ${toBeSoldTvsCalc(getInventory)}`
 toBeSoldTvsInput.style.color = "red";
 
 
 
 //3a//
-createListOfTvNames(inventory);
+createListOfTvNames(getInventory());
 
 
 //4a//
 
-console.log ( createTvName ( inventory[2] ) );
+console.log ( createTvName ( getInventory()[2] ) );
 
 //4b//
-console.log ( tvPrice ( inventory[5] ) );
+console.log ( tvPrice ( getInventory()[5] ) );
 
 //4c//
-console.log (createAvailableScreenSizes( inventory [4] ) );
+console.log (createAvailableScreenSizes( getInventory()[4] ) );
 
 //4d//
 
-createInfoPerTv(inventory[5]);
+createInfoPerTv(getInventory()[5]);
 
 //4e//
-console.log(createOptionsList( inventory [3] ) );
-createInjectionListOfTvNames(inventory);
+console.log(createOptionsList( getInventory()[3] ) );
+createInjectionListOfTvNames(getInventory());
 console.log(createOptionsMap);
 
 export const bonusOpdrachtButton = document.getElementById('bonus-opdracht-button');
@@ -84,9 +84,12 @@ bonusOpdrachtButton.addEventListener('click', () => {
     console.log('dit werkt dus gewoon')
 });
 
+export const bonusOpdrachtButtonAvailableTvs = document.getElementById('bonus-opdracht-button-available');
+bonusOpdrachtButtonAvailableTvs.addEventListener('click', injectedSelectionOfAvailableTvs);
+
 export const bonusOpdrachtButtonPrice = document.getElementById('bonus-opdracht-button-price');
 bonusOpdrachtButtonPrice.addEventListener('click', () => {
     emptyfieldbeforeclick ()
     injectedArrayOfTVsSortedByPrice ()
     console.log('dit werkt dus ook gewoon')
-});    
+});

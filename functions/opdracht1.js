@@ -11,28 +11,44 @@
 
 
 //import data//
-import inventory from "/data/inventory.js";
+import getInventory from "/data/inventory.js";
+
 import {createAvailableScreenSizes, createTvName, tvPrice} from "./opdracht4.js";
 
 //1a//
 
-export const arrayOfTvNames = inventory.map((item) => {
+export const arrayOfTvNames = getInventory().map((item) => {
     return item.name;
 });
 
 //1b//
 
-export const arrayOfSoldOutTv = inventory.filter((item) => {
+export const arrayOfSoldOutTv = getInventory().filter((item) => {
     if (item.sold === item.originalStock){
         return true;
     }
 });
 
-// export const arrayOfSoldOutTv = inventory.map((item) => {
-//     if (item.sold === item.originalStock){
-//         return item;
-//     }
-// });
+//bonus variatie item.sold < item.originalStock//
+export const injectedSelectionOfAvailableTvs = () => {
+
+    const displayNode = document.getElementById('bonusveld');
+
+    displayNode.innerHTML='';
+
+    getInventory().filter((item) => {
+        if (item.sold < item.originalStock) {
+
+            displayNode.innerHTML +=`
+            <p><strong>${createTvName(item)}</strong></p>
+            <p><strong>${tvPrice(item)}</strong></p>
+            <p><strong>${createAvailableScreenSizes(item)}</strong></p>
+            `
+        }
+    });
+
+
+};
 
 //1c//
 //bonusvariatie//
@@ -51,7 +67,7 @@ export const injectedArrayOfAmbiTv = () => {
 
         const listOfInjectedAmbi = document.getElementById('bonusveld');
         //dit was eerder filter omdat ik geen hele array wilden console.loggen//
-        inventory.map((item) => {
+        getInventory().map((item) => {
 
         if (item.options.ambiLight === true){
 
@@ -60,13 +76,12 @@ export const injectedArrayOfAmbiTv = () => {
             <p><strong>${tvPrice(item)}</strong></p>
             <p><strong>${createAvailableScreenSizes(item)}</strong></p>
             `
-
         } return listOfInjectedAmbi;
     });
 };
 
 
-export const arrayOfAmbiTv = inventory.filter((item) => {
+export const arrayOfAmbiTv = getInventory().filter((item) => {
     if (item.options.ambiLight === true){
         return true;
     }
@@ -76,28 +91,26 @@ export const arrayOfAmbiTv = inventory.filter((item) => {
 
 //1d//
 
-export const arrayOfTvPrices = inventory.sort((a, b) => a.price - b.price);
+export const arrayOfTvPrices = getInventory().sort((a, b) => a.price - b.price);
 
 //bonus variatie//
 
 export const injectedArrayOfTVsSortedByPrice = () => {
 
-    const arrayOfTVsSortedByPrice = document.getElementById('bonusveld');
+    const displayNode = document.getElementById('bonusveld');
 
-    const tempArrayOfPrices = inventory.sort((a, b) => a.price - b.price);
+    const tempArrayOfPrices = getInventory().sort((a, b) => a.price - b.price);
+
+    displayNode.innerHTML='';
 
     tempArrayOfPrices.map((item) => {
 
-        return arrayOfTVsSortedByPrice.innerHTML +=`
+            displayNode.innerHTML +=`
             <p><strong>${createTvName(item)}</strong></p>
             <p><strong>${tvPrice(item)}</strong></p>
             <p><strong>${createAvailableScreenSizes(item)}</strong></p>
         `
     });
-
-
-
-
 };
 
 

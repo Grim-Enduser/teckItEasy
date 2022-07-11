@@ -1,5 +1,5 @@
 //import data//
-import inventory from "/data/inventory.js";
+import getInventory from "/data/inventory.js";
 
 // #### Opdracht 3 - Array methoden en functies
 //
@@ -12,7 +12,7 @@ export const createListOfTvNames = (tvs) => {
     const listeOfTvNames = document.getElementById('tv-object-list');
 
 
-    return inventory.map((tv) => {
+    return getInventory().map((tv) => {
 
         listeOfTvNames.innerHTML += `
         <br>

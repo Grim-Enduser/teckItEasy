@@ -33,7 +33,7 @@ body {
 #bonusveld {
     color: red;
     display: inline-block;
-    background-color: lightgreen;
+
     padding: 10px 30px;
     border-radius: 5px;
 }
@@ -53,6 +53,19 @@ body {
 
 #bonus-opdracht-button-price {
     background-color:gold;
+    border: 2px solid pink;
+    color: black;
+    padding: 8px 14px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+}
+
+#bonus-opdracht-button-available {
+    background-color: greenyellow;
     border: 2px solid pink;
     color: black;
     padding: 8px 14px;
