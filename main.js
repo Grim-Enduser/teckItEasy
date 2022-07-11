@@ -18,6 +18,7 @@ import {
     createOptionsList,
     createInjectionListOfTvNames,
     createOptionsMap,
+    newArrayOfAllAvailableSizes
 } from "./functions/opdracht4.js";
 
 
@@ -93,3 +94,6 @@ bonusOpdrachtButtonPrice.addEventListener('click', () => {
     injectedArrayOfTVsSortedByPrice ()
     console.log('dit werkt dus ook gewoon')
 });
+
+//samen voegen van alle .availableSizes uit de array en die vervolgens samengevoegd tot een getal//
+console.log(newArrayOfAllAvailableSizes(getInventory()));

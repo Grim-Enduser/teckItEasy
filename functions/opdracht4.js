@@ -122,6 +122,13 @@ console.log(
         .reduce((sum, current) => sum + current, 0)
 )
 
+export const newArrayOfAllAvailableSizes = () => {
+
+    let array = [].concat(...getInventory().map((tv) => tv.availableSizes))
+        .reduce((sum, current) => sum + current, 0)
+    return array;
+};
+
 // #### Bonusopdracht
 //
 // 1. Maak drie knoppen op de pagina: `Sorteer op prijs`, `AmbiLight TV's` en `Uitverkochte exemplaren`. Gebruik de code
